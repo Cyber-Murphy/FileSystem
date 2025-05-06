@@ -48,6 +48,17 @@ app.get('/delete', async(req,res)=>{
         console.error('deleted')
     }
 })
+
+app.get('/folder', async(req,res)=>{
+    const folder= await fs.mkdir('gauravFolder')
+    res.send('folder created')
+})
+app.get('/fileInFolder', async(req,res)=>{
+    const see= await fs.readdir('gauravFolder')
+        res.send(see)
+    
+})
+
 app.listen(6000, ()=>{
     console.log('port connected successfully');
     
