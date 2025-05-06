@@ -29,7 +29,25 @@ app.get('/write', async(req,res)=>{
     console.log(result);
     
 })
+app.get('/append', async(req,res)=>{
+    try {
+        const append= await fs.appendFile('hello.txt','This is Bangalore buddy')
+        console.log('appended successfully');
+        
+    } catch (error) {
+        console.error(error)
+    }
+})
 
+app.get('/delete', async(req,res)=>{
+    try {
+        const deletei= await fs.unlink('delete.txt')
+        console.log('file deleted');
+        
+    } catch (error) {
+        console.error('deleted')
+    }
+})
 app.listen(6000, ()=>{
     console.log('port connected successfully');
     
