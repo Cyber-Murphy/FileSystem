@@ -1,0 +1,5 @@
+
+bitch please this is my life
+const function add(a,b){
+return res= a+b
+}
